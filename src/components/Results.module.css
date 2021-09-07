@@ -1,0 +1,13 @@
+.resultContainer{
+    display: flex;
+}
+.number{
+    font-size: 2rem;
+    text-align: center;
+}
+.indicator{
+    width: clamp(5rem,30vw,20rem);
+}
+.title{
+    text-align: center;
+}

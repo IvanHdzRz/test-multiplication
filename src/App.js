@@ -15,7 +15,7 @@ const initialState={
   multB:generateRamdomNumber(),
   questionsAsked:0,
   correctAnswers:0,
-  totalQuestions:2,
+  totalQuestions:10,
   userAnswerd:"",
   testHasFinished:false
 }
@@ -23,7 +23,7 @@ const initialState={
 function App() {
   const [state, setstate] = useState(initialState)
   const {secondsToRespond,hasStartTest,multA,multB,questionsAsked,correctAnswers,userAnswerd,testHasFinished,totalQuestions}=state
-  const [timeLeft,startTemp,stopTemp,resetTemp]= useTemporizator({initialTime:secondsToRespond})
+  const [timeLeft,startTemp,stopTemp,resetTemp,isRunning]= useTemporizator({initialTime:secondsToRespond})
 
   //for cronometer
   const handleStartTest=()=>{
@@ -68,11 +68,14 @@ function App() {
   }, [questionsAsked,totalQuestions])
   
   return (
-    <div>
+    <div className="appContainer">
       {
-        !hasStartTest&&<button onClick={handleStartTest}>Iniciar prueba</button>
+        !hasStartTest&&
+        <button onClick={handleStartTest} className="btnStart">
+          Iniciar prueba
+        </button>
       }
-      <CronometerDisplay seconds={timeLeft} />
+      <CronometerDisplay seconds={timeLeft} isRunning={isRunning} />
       <MultiplationDisplay a={multA} b={multB} />
       {
         hasStartTest&&!testHasFinished&&

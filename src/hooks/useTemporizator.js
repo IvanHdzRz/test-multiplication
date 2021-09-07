@@ -47,5 +47,5 @@ export const useTemporizator = ({initialTime=3}) => {
         }
     }, [])
     
-    return [currentTime,startTemp,stopTemp,resetTemp]
+    return [currentTime,startTemp,stopTemp,resetTemp,isRunning]
 }

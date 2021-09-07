@@ -1,0 +1,20 @@
+.answerdContainer{
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+.input{
+    width: clamp(1rem,50vw,10rem);
+    border: none;
+    padding: 0.5rem 1rem;
+    font-size: 1.5rem;
+    text-align: center;
+    border-radius:10px 0 0 10px;
+}
+.btnCheck{
+    background-color: #72C9E3;
+    color: white;
+    border: none;
+    padding:0.5rem 1rem;
+    font-size: 1.5rem;
+    border-radius: 0 10px 10px 0;
+}
